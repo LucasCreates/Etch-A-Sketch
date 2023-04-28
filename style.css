@@ -46,7 +46,7 @@ h1{
 
 .board{
 	height: 500px;
-	width: 500px;
+	width: 450px;
 	display: grid;
 	border: 1px solid black;
 	margin-bottom: 150px;
@@ -62,12 +62,35 @@ h1{
 	border: 1px solid black;	
 	
 }
+.size-input{
+	margin: 0;
+}
+#size-input{
+	width: 50px;
+}
+.select-btn{
+	position: relative;
+	right: 5px;
+}
+#message{
+	flex:1;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
 
-
+.controls-container{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
 .footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 500px;
 	align-items: center;
+	position: relative;
+	bottom: 100px;
+
 }
