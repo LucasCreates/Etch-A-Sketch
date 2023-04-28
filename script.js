@@ -1,16 +1,23 @@
-const grid = document.querySelector(".grid-screen");
-const selectedSize = 16;
+document.addEventListener("DOMContentLoaded", function(){
+	createGrid(16)
+	console.log("test")
+})
 
+function createGrid(size){
+		let board = document.querySelector(".board");
+	    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+	    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+	    let numDivs = size * size
 
-
-function createGrid {
-	for (let i = 0; i < 256; i++) {
-	    const div = document.createElement('div');
-	    div.classList.add('cell');
-	    
-	    grid.appendChild(div); 
-
+	    for(let i = 0; i < numDivs; i++){
+	    	let div = document.createElement("div");
+	    	div.style.backgroundColor = "#ededed";
+	    	div.style.border = "1px solid black"
+	    	board.insertAdjacentElement("beforeend", div);
+	    }
+	
 };
+
 
 
 
