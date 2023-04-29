@@ -1,3 +1,13 @@
+
+
+
+const clearBtn = document.querySelector(".reset-btn");
+const colorBtn = document.querySelector(".color-btn");
+const blackBtn = document.querySelector(".black-btn");
+const eraseBtn = document.querySelector(".erase-btn");
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
 	createGrid(16)
 	
@@ -8,10 +18,12 @@ document.addEventListener("DOMContentLoaded", function(){
 	 	let size = getSize();
 	 	createGrid(size);
 	});
-
-
 	
 })
+
+
+
+
 
 function getSize(){
 	
@@ -46,13 +58,54 @@ function createGrid(size){
 	    	div.style.backgroundColor = "#ededed";
 	    	
 	    	board.insertAdjacentElement("beforeend", div);
-	    	div.addEventListener("mouseover", (event) =>{
-	    		event.target.style.backgroundColor ="black"
-	    	})
+	    	// div.addEventListener("mouseover", (event) =>{
+	    	// 	event.target.style.backgroundColor ="black";
+	    		
+	    	// })
+	    	
+
+	    
+	    	
+	    	clearBtn.addEventListener("click", function(){
+	    		div.style.backgroundColor ="#ededed";
+	    	});
+
+	    	colorBtn.addEventListener("click", function(){
+	    		div.addEventListener("mouseover", (event) =>{
+	    			event.target.style.backgroundColor ="#"+randomColor();
+	    		});
+	    		
+	    			
+	    	});
+	 
+	    	blackBtn.addEventListener("click", function(){
+	    		div.addEventListener("mouseover", (event) =>{
+	    			event.target.style.backgroundColor ="#000";
+	    			div.addEventListener("click", (event) =>{
+	    				event.target.style.backgroundColor ="#ededed"
+	    			})
+	    		});
+	    	});
+	    	eraseBtn.addEventListener("click", function(){
+	    		
+	    		div.addEventListener("mouseover", (event) =>{
+
+	    			event.target.style.backgroundColor ="#ededed";
+	    		});
+	    	});
+
+			// function mouseOver(event){
+			// 	event.target.style.backgroundColor ="#"+randomColor();
+			// }
+
+	    	
 	    }
 		
 };
 
 
 
-
+function randomColor(){
+	return Math.floor(Math.random()*16777215).toString(16);
+}
+console.log(randomColor())

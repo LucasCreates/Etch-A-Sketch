@@ -45,12 +45,12 @@ h1{
 
 
 .board{
-	height: 500px;
-	width: 450px;
+	height: 1000px;
+	width: 600px;
 	display: grid;
 	border: 1px solid black;
-	margin-bottom: 150px;
 	
+	flex: 6;
 
 }
 
@@ -81,16 +81,17 @@ h1{
 
 .controls-container{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	gap: 5px;
 }
 .footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 500px;
+	width: 600px;
 	align-items: center;
 	position: relative;
-	bottom: 100px;
+	bottom: 20px;
+	flex:1;
 
 }
